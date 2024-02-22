@@ -108,6 +108,9 @@ const validateConsumer = (req, res, next) => {
     next();
   }
 };
+app.get("/", (req, res) => {
+  res.redirect("/home");
+});
 
 app.get("/home", (req, res) => {
   res.render("frontpage/home.ejs");
