@@ -1,42 +1,112 @@
 <% layout("/layouts/boilerplate") %>
-<form
-  method="POST"
-  action="/home/employee/main/consumer-detail/<%= consumer._id %>/cut"
->
-  <img src="/images/MahaElec.jpg" class="img-fluid" alt="Electricity Image" />
-  <h2 class="heading">Electricity Control Panel</h2>
-  <p class="consumer-info">
-    <strong>Name of the House:</strong> <%= consumer.homeName %>
-  </p>
-  <p class="consumer-info">
-    <strong>Name of the Consumer:</strong> <%= consumer.name %>
-  </p>
-  <p class="consumer-info" name="id">
-    <strong>Consumer ID:</strong> <%= consumer._id %>
-  </p>
-  <p class="consumer-info">
-    <strong>Consumer Email:</strong> <%= consumer.email %>
-  </p>
-  <div class="row newrow">
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .consumer-info {
+    margin-bottom: 10px;
+  }
+
+  .newrow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  .newcol {
+    border-radius: 50%;
+    margin-left: 0.8rem;
+    height: 1.8rem;
+    width: 1.8rem;
+    margin-bottom: 5px;
+    animation: blink-animation 1s infinite;
+  }
+
+  @keyframes blink-animation {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .btn {
+    margin: 0 10px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+</style>
+
+<div class="container">
+  <form
+    method="POST"
+    action="/home/employee/main/consumer-detail/<%= consumer._id %>/cut"
+  >
     <% if(consumer.OnOrOff == 0){ %>
-    <div class="col-1 newcol" style="background-color: red !important"></div>
+    <img
+      src="/images/img_when_cutoff.jpg"
+      class="img-fluid"
+      alt="Electricity Image"
+    />
     <% }else if(consumer.OnOrOff == 1){ %>
-    <div class="col-1 newcol" style="background-color: green !important"></div>
+    <img src="/images/happy.webp" class="img-fluid" alt="Electricity Image" />
     <% } %>
-    <div class="col-5">
-      <p class="consumer-info">
-        <strong>Consumer House's Status is:</strong> <%= consumer.OnOrOff %>
-      </p>
+
+    <h2 class="heading">Electricity Control Panel</h2>
+    <p class="consumer-info">
+      <strong>Name of the House:</strong> <%= consumer.homeName %>
+    </p>
+    <p class="consumer-info">
+      <strong>Name of the Consumer:</strong> <%= consumer.name %>
+    </p>
+    <p class="consumer-info" name="id">
+      <strong>Consumer ID:</strong> <%= consumer._id %>
+    </p>
+    <p class="consumer-info">
+      <strong>Consumer Email:</strong> <%= consumer.email %>
+    </p>
+    <div class="row newrow">
+      <% if(consumer.OnOrOff == 0){ %>
+      <div class="col-1 newcol" style="background-color: red !important"></div>
+      <% }else if(consumer.OnOrOff == 1){ %>
+      <div
+        class="col-1 newcol"
+        style="background-color: green !important"
+      ></div>
+      <% } %>
+      <div class="col-5">
+        <p class="consumer-info">
+          <strong>Consumer House's Status is:</strong> <%= consumer.OnOrOff %>
+        </p>
+      </div>
     </div>
-  </div>
-  <hr />
-  <p class="consumer-info">Select action:</p>
-  <div id="electricityToggle">
-    <button class="btn btn-danger mb-3" name="button" value="0">
-      Cut Electricity
-    </button>
-    <button class="btn btn-dark mb-3" name="button" value="1">
-      Restore Electricity
-    </button>
-  </div>
-</form>
+    <hr />
+    <p class="consumer-info">Select action:</p>
+    <div id="electricityToggle">
+      <button class="btn btn-danger mb-3" name="button" value="0">
+        Cut Electricity
+      </button>
+      <button class="btn btn-dark mb-3" name="button" value="1">
+        Restore Electricity
+      </button>
+    </div>
+  </form>
+</div>

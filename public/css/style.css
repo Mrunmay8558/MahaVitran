@@ -66,14 +66,3 @@ body {
 .consumer-info {
   font-size: 1.5rem !important;
 }
-.newrow {
-  display: flex;
-  align-items: center;
-}
-.newcol {
-  border-radius: 50%;
-  margin-left: 0.8rem;
-  height: 1.8rem;
-  width: 1.8rem;
-  margin-bottom: 5px;
-}
