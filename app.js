@@ -244,7 +244,7 @@ app.post("/home/employee/main/consumer-detail/:id/cut", async (req, res) => {
   );
   console.log(result);
   req.flash("success", "Process has been done Successfully!");
-  res.redirect("/home/employee/main/consumer-detail");
+  res.redirect(`/home/employee/main/consumer-detail/${id}/cut`);
 });
 
 //Nodemailer Code

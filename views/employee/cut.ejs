@@ -17,6 +17,18 @@
   <p class="consumer-info">
     <strong>Consumer Email:</strong> <%= consumer.email %>
   </p>
+  <div class="row newrow">
+    <% if(consumer.OnOrOff == 0){ %>
+    <div class="col-1 newcol" style="background-color: red !important"></div>
+    <% }else if(consumer.OnOrOff == 1){ %>
+    <div class="col-1 newcol" style="background-color: green !important"></div>
+    <% } %>
+    <div class="col-5">
+      <p class="consumer-info">
+        <strong>Consumer House's Status is:</strong> <%= consumer.OnOrOff %>
+      </p>
+    </div>
+  </div>
   <hr />
   <p class="consumer-info">Select action:</p>
   <div id="electricityToggle">
