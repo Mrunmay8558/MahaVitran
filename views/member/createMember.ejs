@@ -1,0 +1,120 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row">
+  <a href="/home/member/main/logout" class="ms-auto btn btn-danger mt-2 col-1"
+    >Logout</a
+  >
+</div>
+<div class="row">
+  <div class="col-7 offset-2">
+    <h3 class="mt-3 mb-2">Add an Employee!</h3>
+    <form
+      method="POST"
+      action="/home/member/main"
+      novalidate
+      class="needs-validation"
+    >
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          name="name"
+          placeholder="Enter Full Name"
+          type="text"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          name="email"
+          placeholder="abc@gmail.com"
+          type="email"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Enter an Age</label>
+        <input
+          name="age"
+          placeholder="Enter Age"
+          type="number"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="row">
+        <div class="mb-3 col-4">
+          <label for="town" class="form-label">Town</label>
+          <input
+            name="town"
+            placeholder="Current Town"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="mb-3 col-md-8">
+          <label for="city" class="form-label">City</label>
+          <input
+            name="city"
+            placeholder="Enter City"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please Enter The Country Name!</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="permanentAddress" class="form-label"
+          >Permanent Address</label
+        >
+        <textarea
+          name="permanentAddress"
+          placeholder="Enter a permanent address"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="valid-feedback">Please Enter the Permanent Address!</div>
+      </div>
+      <div class="mb-3">
+        <label for="Division" class="form-label">Division</label>
+        <input
+          name="Division"
+          placeholder="Enter Division"
+          type="text"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          name="username"
+          placeholder="Enter username"
+          type="text"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          name="password"
+          placeholder="Enter password (e.g., abc@123)"
+          type="password"
+          class="form-control"
+          required
+        />
+      </div>
+      <button class="btn btn-success add-btn mb-4 me-2 mt-3">Add</button>
+    </form>
+  </div>
+  <div class="row">
+    <form action="/home/member/main/employee-detail">
+      <div class="col-3 offset-2">
+        <button class="btn btn-danger mb-5 ms-2">Employee Details</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+  .message {
+    overflow: hidden;
+    background-color: antiquewhite;
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    padding-top: 1.2rem;
+  }
+
+  .message p {
+    color: red;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    animation: slideText 20s linear infinite; /* Adjust the duration as needed */
+  }
+
+  @keyframes slideText {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+<body>
+  <div class="message">
+    <p>
+      Please contact your HR user of your Division / Section for updating your
+      Personal / Please Login for Authorized Employee
+    </p>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-6 offset-3">
+      <h1>Login</h1>
+      <form
+        action="/home/member"
+        method="POST"
+        class="needs-validation"
+        novalidate
+      >
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            name="username"
+            id="username"
+            placeholder="enter Username"
+            type="text"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            name="password"
+            id="password"
+            placeholder="enter password"
+            type="password"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="div" style="margin-bottom: 15rem">
+          <button class="btn btn-dark me-3">login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>

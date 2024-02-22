@@ -1,0 +1,68 @@
+body {
+  font-family: "poppins", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  height: 5rem;
+}
+.navbar a {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.navbar-nav a {
+  font-size: 1.1rem;
+}
+.navbar-nav a:hover {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Footer */
+
+.f-info {
+  height: 8rem;
+  background-color: #ebebeb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+  text-align: center;
+}
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+  margin-left: 10px;
+}
+.f-info-links:hover a {
+  text-decoration: underline;
+  color: #222222;
+}
+.f-info-links,
+.f-info-social,
+.f-info-brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.f-info-social i {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.img-fluid {
+  height: 30rem !important;
+  width: 100% !important;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700 !important;
+  color: red;
+}
+.consumer-info {
+  font-size: 1.5rem !important;
+}

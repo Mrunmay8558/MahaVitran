@@ -1,0 +1,53 @@
+<% layout("/layouts/boilerplate") %>
+
+<form
+  method="POST"
+  action="/home/employee/forgetten-password"
+  novalidate
+  class="needs-validation"
+>
+  <div class="mb-3 col-7 mt-5">
+    <label for="username" class="form-label">Username</label>
+    <input
+      name="username"
+      id="username"
+      placeholder="enter Username"
+      type="text"
+      class="form-control"
+      required
+    />
+  </div>
+  <div class="mb-3 col-7">
+    <label for="password" class="form-label">Password</label>
+    <input
+      name="password"
+      id="password"
+      placeholder="enter password"
+      type="password"
+      class="form-control"
+      required
+    />
+  </div>
+  <div class="mb-3 col-7">
+    <label for="newPassword" class="form-label">New Password</label>
+    <input
+      name="newPassword"
+      id="newPassword"
+      placeholder="enter password"
+      class="form-control"
+      required
+    />
+  </div>
+  <div class="mb-3 col-7">
+    <label for="ConfirmPass" class="form-label">Confirm Password</label>
+    <input
+      name="ConfirmPass"
+      id="newPassword"
+      placeholder="enter password"
+      type="password"
+      class="form-control"
+      required
+    />
+  </div>
+  <button class="btn btn-dark" style="margin-bottom: 10rem">Submit</button>
+</form>

@@ -1,0 +1,354 @@
+<% layout("/layouts/boilerplate") %>
+
+<style type="text/tailwindcss">
+  @layer components {
+    .card {
+      @apply flex items-center justify-center flex-col gap-2 p-5 w-full sm:w-72 h-full bg-gray-100 border rounded-2xl;
+    }
+  }
+</style>
+
+<div class="jumbotron">
+  <h1 class="display-4 mt-4" style="text-align: center">
+    <b>IOT BASED ELECTRIC GRID CUTOFF SYSTEM</b>
+  </h1>
+
+  <hr class="my-4" />
+
+  <div class="content">
+    <h1 class="display-4" style="text-align: center"><b>INTRODUCTION</b></h1>
+    <p>
+      In the current era, alongside the Internet's advancement, the subject of
+      automation has become a compelling topic for discussion. This undertaking
+      focuses on the creation of an automation system designed for residential
+      electricity cutoffs, employing a network-based embedded controller. The
+      prevailing discourse centers around the challenges faced by governments in
+      managing electricity issues. Given this context, there is an external
+      motivation to develop an automated system for residential electricity
+      devices. The system comprises an embedded device responsible for managing
+      the power supply main switch and updating relevant data in a centralized
+      data center .Users receive cutoff warning messages through GSM and short
+      message services .This system proves advantageous for electricity
+      providers, aiding in the reduction of operational costs by automatically
+      disconnecting electricity when usage limits are surpassed. In certain
+      regions, there is a significant issue with consumers who intentionally
+      neglect to pay their electricity bills. When officials from the
+      electricity provider visit these sites for disconnection, some consumers
+      attempt to tamper with meter connections, while others seek resolution
+      through bribery. This scenario contributes to instances of electricity
+      power theft. Consequently, this project serves the government's interests
+      by promoting timely bill payments, ensuring profitability, and addressing
+      electricity power theft issues. Electricity utilities face considerable
+      revenue loss each year due to energy power theft, leading to power supply
+      shortages for residential and commercial premises. The project's objective
+      is to design and implement a system that automatically disconnects
+      electricity directly from the pole for consumers failing to pay bills on
+      time. When officials arrive to disconnect the supply, some consumers
+      engage in disputes and attempt to resolve the matter through bribes. Even
+      after disconnection, certain consumers may attempt to bypass the system
+      and connect home appliances directly to the service mains. To address the
+      aforementioned challenges, a prototype is suggested, incorporating NodeMCU
+      ESP8266 and relays. This system is designed to automatically disconnect
+      electric supply based on instructions from the microcontroller, directly
+      from the pole, targeting consumers who fail to settle electricity bills
+      within a specific timeframe. Additionally, the proposed Smart Energy
+      Controlling System is positioned to combat power theft, which encompasses
+      various methods such as direct line tapping, meter by passing, injection
+      of foreign elements into the energy. Furthermore, the cost-effectiveness
+      of this system is highlighted, ensuring economic viability without
+      compromising on functionality and accuracy. The paper introduces the
+      concept of automated billing for energy meters, akin to a postpaid mobile
+      connection. The user-friendly front end of the proposed system allows
+      individuals with minimal computer knowledge to operate the software and
+      remotely access meter readings from an office setting. This feature proves
+      valuable for billing purposes within electricity board authorities. To
+      facilitate communication, a GSM modem is integrated with each energy
+      meter, each equipped with its own SIM card, resembling a typical mobile
+      phone SIM.
+    </p>
+    <br />
+    <p>
+      This project proposed an IoT Based Grid Cut-Off System for Non-Bill Paid
+      Consumer which is helpful to track the energy consumption for the user&
+      Control grid status when he/she not pay electric bill using remote
+      location. This data can be accessed by the user through a web page. So
+      there is no need of human intervention. This system also provides a
+      facility to send SMS to consumer. When they not pay billand grid supply is
+      cut-off by MSEB user will get an alert notification. This feature helps
+      control the energy consumption. Hence, it reduces the wastage of energy
+      and helps in creating the awareness about energy consumption.
+    </p>
+  </div>
+
+  <div id="merge">
+    <div id="merge1">
+      <div class="container mx-auto py-9">
+        <div class="flex flex-col text-center gap-4 mb-8 p-4">
+          <div class="text-purple-600 text-2xl font-bold">OUR MENTOR</div>
+        </div>
+
+        <div class="flex items-center justify-center flex-wrap gap-3 p-3">
+          <div class="card">
+            <img
+              src="/images/amol_1633585160.jpg"
+              class="w-24 h-24 rounded-full object-cover transition duration-200 hover:scale-110"
+            />
+
+            <div class="text-gray-900 text-lg font-bold">Amol Pardhi</div>
+
+            <div class="text-purple-600">Professor</div>
+
+            <div class="text-gray-600" style="text-align: center">
+              St. Vincent Pallotti College of Engineering & Technology, Nagpur
+            </div>
+
+            <div
+              class="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600"
+            >
+              <i
+                class="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+              ></i>
+              <a
+                href="https://www.linkedin.com/in/amol-pardhi-ab26b07/"
+                target="_blank"
+                ><i
+                  class="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+                ></i
+              ></a>
+              <i
+                class="fa fa-envelope fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="merge2">
+      <div class="container mx-auto py-8">
+        <div class="flex flex-col text-center gap-4 mb-8 p-4">
+          <div class="text-purple-600 text-2xl font-bold">OUR TEAM</div>
+
+          <div class="text-gray-900 text-3xl md:text-4xl font-bold">
+            Team Members who Worked on this project
+          </div>
+
+          <div class="text-gray-600 md:text-lg">
+            We're a 100% remote team spread all across the world. Join us!
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center flex-wrap gap-3 p-3">
+          <div class="card">
+            <img
+              src="/images/Aditya.jpg"
+              class="w-24 h-24 rounded-full object-cover transition duration-200 hover:scale-110"
+            />
+
+            <div class="text-gray-900 text-lg font-bold">Aditya Meshram</div>
+
+            <div class="text-purple-600">Student</div>
+
+            <div class="text-gray-600">
+              St. Vincent Pallotti College of Engineering & Technology, Nagpur
+            </div>
+
+            <div
+              class="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600"
+            >
+              <i
+                class="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+              ></i>
+              <a
+                href="https://www.linkedin.com/in/amol-pardhi-ab26b07/"
+                target="_blank"
+                ><i
+                  class="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+                ></i
+              ></a>
+              <i
+                class="fa fa-envelope fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+
+          <div class="card">
+            <img
+              src="/images/Nilkhil.jpeg"
+              class="w-24 h-24 rounded-full object-cover transition duration-200 hover:scale-110"
+            />
+
+            <div class="text-gray-900 text-lg font-bold">Nikhil Patil</div>
+
+            <div class="text-purple-600">Student</div>
+
+            <div class="text-gray-600">
+              St. Vincent Pallotti College of Engineering & Technology, Nagpur
+            </div>
+
+            <div
+              class="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600"
+            >
+              <i
+                class="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+              ></i>
+              <a
+                href="https://www.linkedin.com/in/nilay-kanire-3589a9207/"
+                target="_blank"
+                ><i
+                  class="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+                ></i
+              ></a>
+              <i
+                class="fa fa-envelope fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+
+          <div class="card">
+            <img
+              src="/images/WhatsApp Image 2023-09-27 at 1.08.18 PM.jpeg"
+              class="w-24 h-24 rounded-full object-cover transition duration-200 hover:scale-110"
+            />
+
+            <div class="text-gray-900 text-lg font-bold">
+              Mrunmay Chichkhede
+            </div>
+
+            <div class="text-purple-600">Student</div>
+
+            <div class="text-gray-600">
+              St. Vincent Pallotti College of Engineering & Technology, Nagpur
+            </div>
+
+            <div
+              class="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600"
+            >
+              <i
+                class="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+              ></i>
+              <a
+                href="https://www.linkedin.com/in/amol-pardhi-ab26b07/"
+                target="_blank"
+                ><i
+                  class="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+                ></i
+              ></a>
+              <i
+                class="fa fa-envelope fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center flex-wrap gap-3 p-3">
+          <div class="card">
+            <img
+              src="/images/Nilay.jpeg"
+              class="w-24 h-24 rounded-full object-cover transition duration-200 hover:scale-110"
+            />
+
+            <div class="text-gray-900 text-lg font-bold">Nilay Kanire</div>
+
+            <div class="text-purple-600">Student</div>
+
+            <div class="text-gray-600">
+              St. Vincent Pallotti College of Engineering & Technology, Nagpur
+            </div>
+
+            <div
+              class="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600"
+            >
+              <i
+                class="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+              ></i>
+              <a
+                href="https://www.linkedin.com/in/amol-pardhi-ab26b07/"
+                target="_blank"
+                ><i
+                  class="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+                ></i
+              ></a>
+              <i
+                class="fa fa-envelope fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+
+          <div class="card">
+            <img
+              src="/images/SD.jpeg"
+              class="w-24 h-24 rounded-full object-cover transition duration-200 hover:scale-110"
+            />
+
+            <div class="text-gray-900 text-lg font-bold">Swaraj Deshmukh</div>
+
+            <div class="text-purple-600">Student</div>
+
+            <div class="text-gray-600">
+              St. Vincent Pallotti College of Engineering & Technology, Nagpur
+            </div>
+
+            <div
+              class="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600"
+            >
+              <i
+                class="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+              ></i>
+              <a
+                href="https://www.linkedin.com/in/amol-pardhi-ab26b07/"
+                target="_blank"
+                ><i
+                  class="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+                ></i
+              ></a>
+              <i
+                class="fa fa-envelope fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+
+          <div class="card">
+            <img
+              src="/images/RT.jpeg"
+              class="w-24 h-24 rounded-full object-cover transition duration-200 hover:scale-110"
+            />
+
+            <div class="text-gray-900 text-lg font-bold">Rajat Thote</div>
+
+            <div class="text-purple-600">Student</div>
+
+            <div class="text-gray-600">
+              St. Vincent Pallotti College of Engineering & Technology, Nagpur
+            </div>
+
+            <div
+              class="flex items-center justify-center gap-3 mt-2 w-auto h-5 text-gray-600"
+            >
+              <i
+                class="fa-brands fa-twitter fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+              ></i>
+              <a
+                href="https://www.linkedin.com/in/amol-pardhi-ab26b07/"
+                target="_blank"
+                ><i
+                  class="fa-brands fa-linkedin fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+                ></i
+              ></a>
+              <i
+                class="fa fa-envelope fa-lg cursor-pointer transition duration-200 hover:text-gray-400"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

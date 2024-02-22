@@ -1,0 +1,81 @@
+<%  layout("/layouts/boilerplate") %>
+<!-- 
+<div class="card  col-6 offset-2 mt-3 mb-4">
+    <h5 class="card-header">Non Paid Consumer</h5>
+    <div class="card-body">
+      <h5 class="card-title">Grid Cutoff System</h5>
+      <p class="card-text">After Entering THe <b>IP</b>, IP will be direct to the controller 
+        that will be able to cut the ELectric connection of non paid customer</p>
+    Here we need to add the IP address-->  
+    <!-- <a href="" class="btn btn-primary">Click Here!</a>
+    </div>
+</div> -->
+<div class="row">
+    <div class="col-7 offset-2">
+      <h2 class="mt-3 mb-2">Add a Consumer!</h2>
+      <form method="POST" action="/home/employee/main" novalidate class="needs-validation">
+        <div class="mb-3">
+          <label for="username" class="form-label">username</label>
+          <input name="employee[username]"
+           placeholder="Enter an Username" type="text" class="form-control" required />
+      </div>
+      <div class="row">
+        <div class="col-7 mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input name="employee[name]" placeholder="Enter Full Name" type="text" class="form-control" required />
+        </div>
+        <div class="col-5 mb-3">
+          <label for="name" class="form-label">House Name</label>
+          <input name="employee[homeName]" placeholder="Enter House Name" type="text" class="form-control" required />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input name="employee[email]" placeholder="abc@gmail.com" type="email" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Enter an Age</label>
+        <input name="employee[age]" placeholder="Enter Age" type="number" class="form-control" required />
+      </div>
+      <div class="row">
+        <div class="mb-3 col-4">
+          <label for="town" class="form-label" >Town</label>
+          <input name="employee[town]" placeholder="Current Town" class="form-control" required/>
+        </div>
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label">Country</label>
+          <input name="employee[country]" placeholder="enter country" type="text" class="form-control" required/>
+          <div class="invalid-feedback">
+            Please Enter The Country Name!
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="employee" class="form-label" >Permanant Address</label>
+        <textarea
+          name="employee[permanantAddress]"
+          placeholder="Enter an permanant address"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="valid-feedback">
+         Please Enter the Permanant Address!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="Division" class="form-label">Division</label>
+        <input name="employee[Division]" placeholder="Enter Division" type="text" class="form-control" required />
+      </div>
+      <button class="btn btn-success add-btn mb-4 me-2 mt-3">Add</button>
+      </div>
+    </div>
+    </form>
+    <div class="row">
+      <form action="/home/employee/main/consumer-detail">
+          <div class="col-3 offset-2">
+              <button class="btn btn-danger mb-5 ms-2">Consumer Details</button>
+          </div>
+      </form>
+  </div>
+</div>
+

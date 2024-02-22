@@ -1,0 +1,30 @@
+<% layout("/layouts/boilerplate") %>
+<form
+  method="POST"
+  action="/home/employee/main/consumer-detail/<%= consumer._id %>/cut"
+>
+  <img src="/images/MahaElec.jpg" class="img-fluid" alt="Electricity Image" />
+  <h2 class="heading">Electricity Control Panel</h2>
+  <p class="consumer-info">
+    <strong>Name of the House:</strong> <%= consumer.homeName %>
+  </p>
+  <p class="consumer-info">
+    <strong>Name of the Consumer:</strong> <%= consumer.name %>
+  </p>
+  <p class="consumer-info" name="id">
+    <strong>Consumer ID:</strong> <%= consumer._id %>
+  </p>
+  <p class="consumer-info">
+    <strong>Consumer Email:</strong> <%= consumer.email %>
+  </p>
+  <hr />
+  <p class="consumer-info">Select action:</p>
+  <div id="electricityToggle">
+    <button class="btn btn-danger mb-3" name="button" value="0">
+      Cut Electricity
+    </button>
+    <button class="btn btn-dark mb-3" name="button" value="1">
+      Restore Electricity
+    </button>
+  </div>
+</form>

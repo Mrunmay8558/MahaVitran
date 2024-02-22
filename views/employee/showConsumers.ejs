@@ -1,0 +1,88 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+  .card {
+    background-color: black;
+  }
+  .f {
+    color: white !important;
+    text-decoration: none;
+  }
+  .card-subtitle {
+    color: yellow !important;
+  }
+</style>
+
+<div class="row row-cols-lg-4 row row-cols-md-4 row row-cols-sm-1">
+  <% for(consumer of allConsumer){ %>
+  <div class="card col mb-4 ms-3 me-4 mt-3" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title f"><%= consumer.name %></h5>
+      <h6 class="card-subtitle mb-2 mt-2 text-body-secondary">
+        Age: &nbsp;<%= consumer.age %>
+      </h6>
+      <h6 class="card-subtitle mb-2 mt-2 text-body-secondary">
+        Email:&nbsp; <%= consumer.email %>
+      </h6>
+      <h6 class="card-subtitle mb-2 mt-2 text-body-secondary">
+        Town: &nbsp; <%= consumer.town %>
+      </h6>
+      <h6 class="card-subtitle mb-2 mt-2 text-body-secondary">
+        Country: &nbsp; <%= consumer.country %>
+      </h6>
+      <p class="card-text mt-2 f">
+        Permanant-Address: &nbsp;<%= consumer.permanantAddress %>
+      </p>
+      <h6 class="card-subtitle mt-2 mb-2 text-body-secondary">
+        Divisional Office: &nbsp;<%= consumer.Division %>
+      </h6>
+      <% if(consumer.OnOrOff == 0){ %>
+      <h6 class="card-subtitle mt-2 mb-2 text-body-secondary">
+        The Electricity has been cut off!
+      </h6>
+      <% }else if(consumer.OnOrOff == 1){ %>
+      <h6 class="card-subtitle mt-2 mb-2 text-body-secondary">
+        The Electricity has been on!
+      </h6>
+      <% } %>
+
+      <h6 class="card-subtitle mt-2 mb-2 text-body-secondary">
+        Created At: &nbsp;<%= consumer.createdAt.toLocaleDateString()%>
+      </h6>
+      <div class="row">
+        <div class="col-3">
+          <form
+            action="/home/employee/main/consumer-detail/<%= consumer._id %>/edit"
+            method="GET"
+          >
+            <button class="btn mt-2 btn-dark">Edit</button>
+          </form>
+        </div>
+        <div class="col-3">
+          <form
+            action="/home/employee/main/consumer-detail/<%= consumer._id %>/delete?_method=DELETE"
+            method="POST"
+          >
+            <button class="btn mt-2 btn-danger">Delete</button>
+          </form>
+        </div>
+        <div class="col-3">
+          <form
+            action="/home/employee/main/consumer-detail/<%= consumer._id %>/cut"
+            method="GET"
+          >
+            <button class="btn mt-2 ms-4 btn-danger">Cut</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <form
+          action="/home/employee/main/consumer-detail/<%= consumer._id %>/alert"
+          method="GET"
+        >
+          <button class="btn mt-2 btn-danger" disabled>Alert</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</div>

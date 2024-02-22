@@ -1,0 +1,56 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row">
+    <div class="col-7 offset-2">
+      <h3 class="mt-3 mb-2">Edit a Consumer!</h3>
+      <form method="POST" action="/home/employee/main/consumer-detail/<%= consumer._id %>?_method=PUT" novalidate class="needs-validation">
+        <div class="mb-3">
+          <label for="username" class="form-label">username</label>
+          <input name="employee[username]"
+           value="<%= consumer.username %>" type="text" class="form-control" required />
+      </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input name="employee[name]" value="<%= consumer.name %>" type="text" class="form-control" required />
+        </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input name="employee[email]" value="<%= consumer.email %>" type="email" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Enter an Age</label>
+        <input name="employee[age]" value="<%= consumer.age %>" type="number" class="form-control" required />
+      </div>
+      <div class="row">
+        <div class="mb-3 col-4">
+          <label for="town" class="form-label" >Town</label>
+          <input name="employee[town]" value="<%= consumer.town %>" class="form-control" required/>
+        </div>
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label">Country</label>
+          <input name="employee[country]" value="<%= consumer.country %>" type="text" class="form-control" required/>
+          <div class="invalid-feedback">
+            Please Enter The Country Name!
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="employee" class="form-label" >Permanant Address</label>
+        <textarea
+          name="employee[permanantAddress]"
+          
+          class="form-control"
+          required
+        ><%= consumer.permanantAddress %></textarea>
+        <div class="valid-feedback">
+         Please Enter the Permanant Address!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="Division" class="form-label">Division</label>
+        <input name="employee[Division]" value="<%= consumer.Division %>" type="text" class="form-control" required />
+      </div>
+      <button class="btn btn-success add-btn mb-4 me-2 mt-3">Edit</button>
+      </div>
+      </div>
+    </form>
+</div>

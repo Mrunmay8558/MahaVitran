@@ -1,0 +1,44 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+  .card {
+    background-color: black;
+  }
+  .f {
+    color: white !important;
+    text-decoration: none;
+  }
+  .card-subtitle {
+    color: yellow !important;
+  }
+</style>
+
+<div class="row row-cols-lg-4 row row-cols-md-4 row row-cols-sm-1">
+  <% for(employee of allEmployee){ %>
+  <div class="card col mb-5 me-4 mt-5" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title f"><%= employee.name %></h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">
+        Age: &nbsp;<%= employee.age %>
+      </h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary">
+        Email:&nbsp; <%= employee.email %>
+      </h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary">
+        Town: &nbsp; <%= employee.town %>
+      </h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary">
+        Country: &nbsp; <%= employee.city %>
+      </h6>
+      <p class="card-text f">
+        Permanant-Address: &nbsp;<%= employee.permanantAddress %>
+      </p>
+      <h6 class="card-subtitle mb-2 text-body-secondary">
+        Divisional Office: &nbsp;<%= employee.Division %>
+      </h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary">
+        Created At: &nbsp;<%= employee.username%>
+      </h6>
+    </div>
+  </div>
+  <% } %>
+</div>

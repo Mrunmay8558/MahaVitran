@@ -1,0 +1,29 @@
+<style>
+    .nav-link{
+      margin-bottom: 0.4rem;
+      font-weight: 400 !important;
+    }
+</style>
+
+<nav class="navbar navbar-dark sticky-top" style="background-color: rgb(198, 198, 198);">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/home" style="color: black; font-size: 2rem;"><i class="fa-solid fa-bolt"></i>&nbsp;IOTEGS</a></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu Bar</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      
+      <div class="offcanvas-body">
+        <a class="nav-link active" aria-current="page" href="/home">Home</a>
+        <a class="nav-link" href="/home/team" class="mb-2">About Project</a>
+        <a class="nav-link" href="/home/employee" class="mb-2">Login</a>
+        <a class="nav-link" href="/home/employee/logout" class="mb-2">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
