@@ -294,6 +294,9 @@ app.get("/home/employee/main/consumer-detail/:id/alert", async (req, res) => {
   }
 });
 
+app.get("/home/terms-and-condition", (req, res) => {
+  res.render("Team_Members/tandC.ejs");
+});
 //Adding Employee
 app.get("/home/member", async (req, res) => {
   res.render("member/member.ejs");
