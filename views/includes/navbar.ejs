@@ -14,15 +14,19 @@
     
     <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu Bar</h5>
+        <h5 class="offcanvas-title titleNav" id="offcanvasDarkNavbarLabel"><i class="fa-solid fa-gear me-3"></i>Menu Bar</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       
-      <div class="offcanvas-body" >
-        <a class="nav-link active" aria-current="page" href="/home">Home</a>
-        <a class="nav-link" href="/home/team" class="mb-2">About Project</a>
-        <a class="nav-link" href="/home/employee" class="mb-2">Login</a>
-        <a class="nav-link" href="/home/employee/logout" class="mb-2">Logout</a>
+      <div class="offcanvas-body navItem" >
+        <a class="nav-link active navItems mt-2" aria-current="page" href="/home"><i class="fa-solid fa-house me-3"></i>Home</a>
+        <hr>
+        <a class="nav-link navItems mt-2" href="/home/team" class="mb-2"><i class="fa-regular fa-address-card me-3"></i>About Project</a>
+        <hr>
+        <a class="nav-link navItems mt-2 " href="/home/employee" class="mb-2"><i class="fa-solid fa-right-to-bracket me-3"></i>Login</a>
+        <hr>
+        <a class="nav-link navItems mt-2" href="/home/employee/logout" class="mb-2"><i class="fa-solid fa-circle-xmark me-3"></i>Logout</a>
+        <hr>
       </div>
     </div>
   </div>

@@ -66,3 +66,9 @@ body {
 .consumer-info {
   font-size: 1.5rem !important;
 }
+.titleNav {
+  font-size: 1.6rem !important;
+}
+.navItem a {
+  font-size: 1.2rem;
+}
