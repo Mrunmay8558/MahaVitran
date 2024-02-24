@@ -190,9 +190,9 @@ app.post(
   "/home/employee/main",
   validateConsumer,
   wrapAsync(async (req, res) => {
-    console.log(req.user);
     const consumerData = req.body.employee;
     const newConsumer = new Consumer(consumerData);
+
     await newConsumer.save();
     res.redirect("/home/employee/main/consumer-detail");
   })
