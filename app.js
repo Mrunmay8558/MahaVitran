@@ -259,7 +259,7 @@ app.get("/home/employee/main/consumer-detail/:id/alert", async (req, res) => {
       service: "gmail",
       auth: {
         type: "OAuth2",
-        user: "iot.egs1111@gmail.com",
+        user: "kanire7nilay@gmail.com",
         clientId: process.env.CLIENT_ID,
         clientSecret: process.env.CLIENT_SECRET,
         refreshToken: process.env.REFRESH_TOKEN,
@@ -268,7 +268,7 @@ app.get("/home/employee/main/consumer-detail/:id/alert", async (req, res) => {
     });
 
     const mailOption = {
-      from: '"IOTEGS" <iot.egs1111@gmail.com>', // sender address
+      from: '"IOTEGS" <kanire7nilay@gmail.com>', // sender address
       to: email, // using the dynamically obtained email address
       subject: "Warning Notice - Pending Electricity Bill Payment",
       text: "IOTEGS",
@@ -371,10 +371,10 @@ app.get("/home/member/main/logout", (req, res) => {
 
 app.get("/home/createMain", async (req, res) => {
   let fakeUser = new Member({
-    name: "Mrunmay Chichkhede",
-    username: "Mrunmay2002",
+    name: "Nilay Kanire",
+    username: "Nilay77",
   });
-  let newUser = await Member.register(fakeUser, "demo@123");
+  let newUser = await Member.register(fakeUser, "Nilay@123");
   console.log(newUser);
   res.redirect("/home");
 });
