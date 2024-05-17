@@ -259,7 +259,7 @@ app.get("/home/employee/main/consumer-detail/:id/alert", async (req, res) => {
       service: "gmail",
       auth: {
         type: "OAuth2",
-        user: "kanire7nilay@gmail.com",
+        user: "infoiotegs@gmail.com",
         clientId: process.env.CLIENT_ID,
         clientSecret: process.env.CLIENT_SECRET,
         refreshToken: process.env.REFRESH_TOKEN,
@@ -268,7 +268,7 @@ app.get("/home/employee/main/consumer-detail/:id/alert", async (req, res) => {
     });
 
     const mailOption = {
-      from: '"IOTEGS" <kanire7nilay@gmail.com>', // sender address
+      from: '"IOTEGS" <infoiotegs@gmail.com>', // sender address
       to: email, // using the dynamically obtained email address
       subject: "Warning Notice - Pending Electricity Bill Payment",
       text: "IOTEGS",
