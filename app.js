@@ -21,6 +21,11 @@ const ExpressError = require("./utils/expressError.js");
 const { consumerSchema } = require("./schema.js");
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
+const { log } = require("console");
+const accountSid = process.env.TWILIO_ACID;
+const authToken = process.env.TWILIO_AUTH;
+
+const client = require("twilio")(accountSid, authToken);
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
@@ -238,16 +243,51 @@ app.get("/home/employee/main/consumer-detail/:id/cut", async (req, res) => {
 app.post("/home/employee/main/consumer-detail/:id/cut", async (req, res) => {
   let { button } = req.body;
   let { id } = req.params; // Accessing the id parameter from req.params
+  const user = await Consumer.findById(id);
+  const name = user.name;
   const result = await Consumer.updateOne(
     { _id: id },
     { $set: { OnOrOff: button } }
   );
   console.log(result);
-  req.flash("success", "Process has been done Successfully!");
+
+  let twilioMobile;
+  switch (name) {
+    case "Mrunmay Chichkhede":
+      twilioMobile = process.env.TWILIO_MOBILE_MRU;
+      break;
+    case "Nikhil Suresh Patil":
+      twilioMobile = process.env.TWILIO_MOBILE_NIK;
+      break;
+    case "Nilay Kanire":
+      twilioMobile = process.env.TWILIO_MOBILE_NIL;
+      break;
+    default:
+      twilioMobile = process.env.TWILIO_MOBILE_DEFAULT;
+  }
+
+  let str;
+  if (button == 0) {
+    str = `Dear ${name},\nWe hope you're well. We regret to inform you that your electricity supply has been cut off due to a pending bill with IOTEGS. To restore service, please settle the outstanding amount at your earliest convenience. For assistance, contact us at infoiotegs@gmail.com.\n\nThank you for choosing IOTEGS.\n\nBest regards,\nTeam IOTEGS`;
+  } else {
+    str = `Dear ${name},\nWe hope you're well. Thank you for promptly paying your pending bill with IOTEGS. Your recharge has been successfully processed, and your electricity connection has been restored.\n\nFor any further assistance, please contact us at infoiotegs@gmail.com.\n\nThank you for choosing IOTEGS.\n\nBest regards,\nTeam IOTEGS`;
+  }
+
+  // Send SMS using Twilio
+  client.messages
+    .create({
+      body: str,
+      from: process.env.TWILIO_MOBILE,
+      to: twilioMobile,
+    })
+    .then((message) => console.log(message.sid))
+    .catch((error) => console.error("Error sending message:", error));
+
+  req.flash("success", "Process has been done successfully!");
   res.redirect(`/home/employee/main/consumer-detail/${id}/cut`);
 });
 
-//Nodemailer Code
+//Nodemailer Code and Message Functionality
 app.get("/home/employee/main/consumer-detail/:id/alert", async (req, res) => {
   try {
     let { id } = req.params;
@@ -283,7 +323,26 @@ app.get("/home/employee/main/consumer-detail/:id/alert", async (req, res) => {
       <b>Best regards,</b><br>
       <b>Team IOTEGS</b>`,
     };
+    let twilioMobile;
+    console.log(name);
+    if (name === "Mrunmay Chichkhede") {
+      twilioMobile = process.env.TWILIO_MOBILE_MRU;
+    } else if (name === "Nikhil Suresh Patil") {
+      twilioMobile = process.env.TWILIO_MOBILE_NIK;
+    } else if (name === "Nilay Kanire") {
+      twilioMobile = process.env.TWILIO_MOBILE_NIL;
+    } else {
+      twilioMobile = process.env.TWILIO_MOBILE_DEFAULT;
+    }
 
+    // console.log(twilioMobile + " " + process.env.TWILIO_MOBILE_NIL);
+    client.messages
+      .create({
+        body: `Dear ${name}, we hope you're well. Your electricity bill with IOTEGS is pending. Please settle the amount to avoid service disconnection. For assistance, contact us at ${email}. Thank you for choosing IOTEGS. Best regards, Team IOTEGS.`,
+        from: process.env.TWILIO_MOBILE,
+        to: twilioMobile, // Default number
+      })
+      .then((message) => console.log(message.sid));
     const result = await transporter.sendMail(mailOption);
     console.log("Email sent...", result);
     req.flash("success", "Alert has been send Successfully!");
