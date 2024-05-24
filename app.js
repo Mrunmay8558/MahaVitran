@@ -21,7 +21,7 @@ const ExpressError = require("./utils/expressError.js");
 const { consumerSchema } = require("./schema.js");
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
-const { log } = require("console");
+const { log, Console } = require("console");
 const accountSid = process.env.TWILIO_ACID;
 const authToken = process.env.TWILIO_AUTH;
 
@@ -452,4 +452,5 @@ app.use((err, req, res, next) => {
 app.get("/home/t&C", (req, res) => {
   res.render("termsAndCondition.ejs");
   console.log("Hello WOrld");
+  Console.log("Hello Bhai!");
 });
