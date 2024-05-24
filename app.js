@@ -451,4 +451,5 @@ app.use((err, req, res, next) => {
 
 app.get("/home/t&C", (req, res) => {
   res.render("termsAndCondition.ejs");
+  console.log("Hello WOrld");
 });
